@@ -1,0 +1,34 @@
+
+version: "3.6"
+
+services:
+  api:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    depends_on:
+      - postgres
+    networks:
+      - net-spot
+
+  postgres:
+    image: postgres:14.1-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=api
+    volumes:
+      - ../data/postgresql:/var/lib/postgresql
+    ports:
+      - 15432:5432
+    networks:
+      - net-spot
+
+volumes:
+  postgres_data:
+networks:
+  net-spot:
+    name: net-spot
+
