@@ -1,0 +1,14 @@
+# Configuration files
+.vscode/
+
+# Virtual environment
+env/
+
+# Cache and log files
+__pycache__/
+*.pyc
+*.log
+
+# Backup files
+*~
+*.swp
