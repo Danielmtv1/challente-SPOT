@@ -45,7 +45,6 @@ To install, you need to clone the repository. Once the repository has been clone
 ```sh
 make api
 ```
-## Development
 
 ## License
 
