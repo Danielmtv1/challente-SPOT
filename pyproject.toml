@@ -99,6 +99,8 @@ webencodings = "0.5.1"
 zipp = "3.15.0"
 isodate = "0.6.1"
 python-multipart = "0.0.6"
+httpcore = "0.17.1"
+httpx = "0.24.1"
 
 
 [build-system]

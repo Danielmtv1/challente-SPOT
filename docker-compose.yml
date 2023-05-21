@@ -1,4 +1,3 @@
-
 version: "3.6"
 
 services:
@@ -6,6 +5,7 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8081"]
     ports:
       - "8081:8081"
     depends_on:
@@ -26,9 +26,20 @@ services:
     networks:
       - net-spot
 
+  test:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    command: ["python", "-m", "unittest", "discover"]
+    depends_on:
+      - api
+      - postgres
+    networks:
+      - net-spot
+
 volumes:
   postgres_data:
+
 networks:
   net-spot:
     name: net-spot
-

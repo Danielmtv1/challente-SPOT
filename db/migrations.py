@@ -18,7 +18,4 @@ def wait_for_postgres():
 def run_alembic_autogenerate():
     wait_for_postgres()
 
-    subprocess.run(
-        ["alembic", "-c", "alembic.ini", "revision",
-         "--autogenerate", "-m", ""])
     subprocess.run(["alembic", "-c", "alembic.ini", "upgrade", "head"])
