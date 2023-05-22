@@ -46,6 +46,7 @@ To install, you need to clone the repository. Once the repository has been clone
 make api
 ```
 
+When running "make api," three containers are created: one for the database, another for the API, and a third one specifically for running tests. The third container executes the tests and then terminates. You can check out the Swagger documentation at the following address: http://0.0.0.0:8081/docs#/. There, you will find four routes: one for testing and three functional routes. The "upload image" route is used to upload a single image, while the "upload_images" route is used to upload images in batches. Lastly, we have the "get images" route to verify the images stored in the database along with their respective Azure container URLs
 ## License
 
 MIT
